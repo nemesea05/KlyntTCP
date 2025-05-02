@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/e9df725216.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Contact</title>
+
+        <link rel="icon" href="klint.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+         crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+         crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="contact.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  
+        <script>
+            $(document).ready(function() {
+           
+              $( function() {
+    $( "#dialogtwt" ).dialog();
+  } );
+
+  $("#dialougebtn").click(function() {
+                $("#more-content").hide();
+                $("#hide-btn").hide();  
+                $("#show-btn").show();  
+            });
+
+            $("#more-content").hide();
+            
+           
+            $("#show-btn").click(function() {
+                $("#more-content").show();
+                $("#show-btn").hide(); 
+                $("#hide-btn").show();  
+            });
+
+           
+            $("#hide-btn").click(function() {
+                $("#more-content").hide();
+                $("#hide-btn").hide();  
+                $("#show-btn").show();  
+            });
+        });               
+
+      </script>
+    </head>
+
+    <body>
+      <nav class="navbar navbar-expand-md">
+
+        <a class="navbar-brand" href="#" >
+          <img alt="logo" src="klint.png" height="85px" width="90px" id="logoid">
+        </a>
+        <label class="navbar-brand-a" href="#" id="logotitle">Klynt</label>
+
+        <button class="navbar-toggler navbar-dark  bg-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+
+          <ul class="navbar-nav">
+ 
+            <li class="nav-item">
+              <a id="navitemfont" class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id="navitemfont" class="nav-link" href="products.html">Collections</a>
+        </li>
+      
+        <li class="nav-item">
+            <a id="navitemfont" class="nav-link" href="cart.php">Cart</a>
+          </li>
+      
+          <li class="nav-item">
+            <a id="navitemfont" class="nav-link " href="brand.html">Brand</a>
+          </li>
+      
+          <li class="nav-item">
+            <a id="navitemfont" class="nav-link active" href="contact.html">Contact</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link" href="Profile.html">
+                <div class="circle-nav">
+                    <img alt="Profile" src="profile1.jpg" class="profile-image-nav">
+                </div>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+          <form class="form-inline">
+              
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                  <i class="fas fa-search"></i>
+              </button>
+          </form>
+      </li>
+       
+      <a href="#"></a> 
+      </ul>
+      
+            
+                </ul>
+      
+              </div>
+          </nav>
+                </header>
+                <br>
+
+          
+  <main>
+          <div class="sections">
+    <div id="more-about">
+      <h1>Klynt</h1>
+  </div>
+    </div>  
+  </div>
+<div class="map"> 
+  
+  <h1>The KALYE LIFE IN NEW TIMES Flagship Store</h1>
+  <p>Address: 938 Aurora Blvd, Cubao, Quezon City, 1109 Metro Manila</p>
+  <iframe 
+
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.5311559386964!2d121.05914687587034!3d14.625763785863622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b796aecb8763%3A0xaa026ea7350f82e7!2sTechnological%20Institute%20of%20the%20Philippines%20-%20Quezon%20City!5e0!3m2!1sen!2sph!4v1733039599272!5m2!1sen!2sph" 
+      width="900" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+          </div>
+
+<div class="contacts">  
+  <h5> Online Inquiry</h5>
+  <p> Contact No.: (+63) 906.593.0970</p>
+  <h5> Social Media Accounts</h5>
+  <a href="#">  Instagram: @klynewtimes</a> <br>
+  <a href="#">  Facebook: klynewtimes</a> <br>
+  <a href="#">  twitter: @klynt</a>
+</div>
+
+
+<br>
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+
+<center><div class="input-container">
+  <i class="fa fa-envelope-o"></i>
+  <input 
+    type="text" 
+    id="emailus" 
+    name="fname" 
+    placeholder="email@website.com">
+  <i class="fa fa-chevron-right"></i>
+</div></center>
+
+    <center><p id="tptitle"> Klynt</p> </center>
+   
+    <link 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+      rel="stylesheet">
+    <br>
+
+      <div class="row">   
+          <div class="col-lg-8 col-md-8 col-sm-12">
+          <h4 class="text-uppercase font-weight-bold">Additional Information</h4><br>
+          <p>Founded by Mendoza Mikhail Pitstock in 2023, Klynt transcends mere clothing; it embodies a cultural experience. Streetwear, a fashion trend originated in streets, is known for its laid-back, comfortable, 
+            and distinctive aesthetic that gives consideration to the attitudes and lifestyle (Blogs Crew, 2023)</p>
+          <p>People express themselves in different, unique ways which includes their clothing, hairstyle, body customization (e.g., tattoos), and jewelry , and adopting what is more commonly referred to as fashion (Ross, 2020), 
+            and the fashion embodies a contemporary perspective and a set of trends to embrace. Notably , a compelling observation is that, for a significant portion of participants, fashion is predominantly associated with younger generations (Shukurova, 2018).</p>
+      </div>
+      
+      
+      <div class="col-lg-4 col-md-4 col-sm-12" id="contact-details">
+          <h4 class="text-uppercase font-weight-bold">Contact Us!</h4><br>
+          <div class="details">
+            <div>
+                <li><i class="fa-solid fa-map"></i>
+                    <p>#938 Aurora Boulevard. Cubao, Quezon City</p>
+                </li>
+                
+                    <li>
+                      <i class="fa-solid fa-envelope"></i>
+                      <i> <a href="mailto:info@klynewtimes.com">info@klynewtimes.com</a></i>
+                  </li>
+                </li>
+                <li>
+                  <i class="fa-brands fa-instagram"></i>
+                  <a href="https://www.instagram.com/klynewtimes" target="_blank" rel="noopener noreferrer">@klynewtimes</a>
+              </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>09602010983 / 09785678293</p>
+                </li>
+            </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="footer-copyright text-center">© 2024 The Project Co. All rights reserved.</div>
+  </div>
+</footer>
+    </body>
+</html>

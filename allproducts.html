@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Products Page</title>
+<link href="klint.png" rel="icon" type="image/x-icon"/>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&amp;display=swap" rel="stylesheet"/>
+<link href="allproducts.css" rel="stylesheet"/>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/e9df725216.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet"/>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        
+          document.querySelectorAll('.main-filter').forEach(main => {
+            main.addEventListener('change', () => {
+              const groupId = main.dataset.subgroup;
+              const group = document.getElementById(groupId);
+              group.style.display = main.checked ? 'block' : 'none';
+        
+             
+              if (!main.checked) {
+                group.querySelectorAll('input').forEach(cb => cb.checked = false);
+              }
+        
+              filterProducts();
+            });
+        
+            const groupId = main.dataset.subgroup;
+            const group = document.getElementById(groupId);
+            const subFilters = group.querySelectorAll('.sub-filter');
+            const anyChecked = Array.from(subFilters).some(cb => cb.checked);
+            group.style.display = main.checked || anyChecked ? 'block' : 'none';
+          });
+        
+         
+          document.querySelectorAll('.sub-filter').forEach(cb => {
+            cb.addEventListener('change', filterProducts);
+          });
+        
+          function filterProducts() {
+  const activeValues = Array.from(document.querySelectorAll('.sub-filter:checked'))
+    .map(cb => cb.value);
+
+  document.querySelectorAll('.product-card').forEach(card => {
+    const type = card.getAttribute('data-category');
+
+    if (activeValues.length === 0) {
+    
+      card.classList.remove('hidden');
+    } else {
+    
+      card.classList.toggle('hidden', !activeValues.includes(type));
+    }
+  });
+}
+        
+        
+          filterProducts();
+        });
+        </script>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    footer.page-footer {
+      background-color: #222;
+      color: white;
+     
+    }
+  </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script></head>
+<body>
+<div class="page-wrapper">
+<nav class="navbar navbar-expand-md">
+<a class="navbar-brand" href="#">
+<img alt="logo" height="85px" id="logoid" src="klint.png" width="90px"/>
+</a>
+<label class="navbar-brand-a" href="#" id="logotitle">Klynt</label>
+<button class="navbar-toggler navbar-dark" data-target="#main-navigation" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon">.</span>
+</button>
+<div class="collapse navbar-collapse" id="main-navigation">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" id="navitemfont">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="products.html" id="navitemfont">Collections</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="cart.php" id="navitemfont">Cart</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="brand.html" id="navitemfont">Brand</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html" id="navitemfont">Contact</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="Profile.html">
+<div class="circle-nav">
+<img alt="Profile" class="profile-image-nav" src="profile1.jpg"/>
+</div>
+</a>
+</li>
+<li class="nav-item">
+<form class="form-inline">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+<i class="fas fa-search"></i>
+</button>
+</form>
+</li>
+</ul>
+</div>
+</nav>
+<main>
+<center>
+<br/> <br/>
+<div class="container-fluid mt-4" id="container">
+<div class="row">
+<div class="col-md-3">
+<div class="category-group">
+<label><input class="main-filter" data-subgroup="tops" type="checkbox"/> Tops</label>
+<div class="subcategory-group" id="tops">
+<label><input class="sub-filter" type="checkbox" value="ss"/> Sweatshirts</label>
+<label><input class="sub-filter" type="checkbox" value="sw"/> Sweaters</label>
+<label><input class="sub-filter" type="checkbox" value="tee"/> Short Sleeve Tees</label>
+<label><input class="sub-filter" type="checkbox" value="LST"/> Long Sleeve Tees</label>
+<label><input class="sub-filter" type="checkbox" value="bt"/> Baby Tees</label>
+</div>
+</div>
+<div class="category-group">
+<label><input class="main-filter" data-subgroup="overpiece" type="checkbox"/> Overpiece</label>
+<div class="subcategory-group" id="overpiece">
+<label><input class="sub-filter" type="checkbox" value="ve"/> Vest</label>
+<label><input class="sub-filter" type="checkbox" value="SSS"/> Short Sleeve Shirt</label>
+<label><input class="sub-filter" type="checkbox" value="lsh"/> Long Sleeve Shirt</label>
+<label><input class="sub-filter" type="checkbox" value="ja"/> Jacket</label>
+<label><input class="sub-filter" type="checkbox" value="h"/> Hoodies</label>
+</div>
+</div>
+<div class="category-group">
+<label><input class="main-filter" data-subgroup="footwear" type="checkbox"/> Footwear</label>
+<div class="subcategory-group" id="footwear">
+<label><input class="sub-filter" type="checkbox" value="sd"/> Suede</label>
+<label><input class="sub-filter" type="checkbox" value="sn"/> Sneakers</label>
+<label><input class="sub-filter" type="checkbox" value="sl"/> Slides</label>
+<label><input class="sub-filter" type="checkbox" value="fm"/> Formal</label>
+<label><input class="sub-filter" type="checkbox" value="bo"/> Boots</label>
+</div>
+</div>
+<div class="category-group">
+<label><input class="main-filter" data-subgroup="bottoms" type="checkbox"/> Bottoms</label>
+<div class="subcategory-group" id="bottoms">
+<label><input class="sub-filter" type="checkbox" value="sp"/> Sweatpants</label>
+<label><input class="sub-filter" type="checkbox" value="s"/> Shorts</label>
+<label><input class="sub-filter" type="checkbox" value="dj"/> Denim Jeans</label>
+<label><input class="sub-filter" type="checkbox" value="ch"/> Chino Pants</label>
+<label><input class="sub-filter" type="checkbox" value="car"/> Cargo Pants</label>
+</div>
+</div>
+<div class="category-group">
+<label><input class="main-filter" data-subgroup="accessories" type="checkbox"/> Accessories</label>
+<div class="subcategory-group" id="accessories">
+<label><input class="sub-filter" type="checkbox" value="sg"/> Sunglasses</label>
+<label><input class="sub-filter" type="checkbox" value="sk"/> Socks</label>
+<label><input class="sub-filter" type="checkbox" value="cap"/> Caps &amp; Beanies</label>
+<label><input class="sub-filter" type="checkbox" value="bd"/> Bandanas</label>
+<label><input class="sub-filter" type="checkbox" value="b"/> Bags &amp; Backpacks</label>
+</div>
+</div>
+</div>
+<div class="col-md-9">
+<br/>
+<h1 style="font-family: courgette;"> Products</h1>
+<div class="products">
+<div class="product-card" data-category="SSS">
+<img alt="T-Shirt" src="products/SSS 1.png"/>
+<h3>Green Polo Shirt</h3>
+<p>Comfortable cotton t-shirt for everyday wear.</p>
+<p class="price">₱1526</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="SSS">
+<img alt="Headphones" src="products/SSS 2.png"/>
+<h3>Artsy Polo</h3>
+<p>Noise-cancelling wireless headphones.</p>
+<p class="price">₱1274</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="SSS">
+<img alt="Jacket" src="products/SSS 3.png"/>
+<h3>le Paint Shirt</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱1787</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="SSS">
+<img alt="Sunglasses" src="products/SSS 4.png"/>
+<h3>Scenery Shirt</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱1846</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ve">
+<img alt="Smartphone" src="products/V 1.png"/>
+<h3>Classy Vest</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱2743</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ve">
+<img alt="Watch" src="products/V 2.png"/>
+<h3>Skelly Vest</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱513</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="s">
+<img alt="T-Shirt" src="products/S 1.png"/>
+<h3>Plain Black Shorts</h3>
+<p>Comfortable cotton t-shirt for everyday wear.</p>
+<p class="price">₱1593</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="s">
+<img alt="Headphones" src="products/S 2.png"/>
+<h3>Two-toned shorts</h3>
+<p>Noise-cancelling wireless headphones.</p>
+<p class="price">₱889</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="s">
+<img alt="Jacket" src="products/S 3.png"/>
+<h3>Thrasher shorts</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱2637</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="s">
+<img alt="Sunglasses" src="products/S 4.png"/>
+<h3>Sports Shorts (Thrasher)</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱1957</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ve">
+<img alt="Smartphone" src="products/V 3.png"/>
+<h3>Hunting Style Vest</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱1434</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ve">
+<img alt="Watch" src="products/V 4.png"/>
+<h3>Heated Vest</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2616</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sp">
+<img alt="Jacket" src="products/SP 1.png"/>
+<h3>Sweatpants Bomb</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱2047</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sp">
+<img alt="Sunglasses" src="products/SP 2.png"/>
+<h3>Space Cadet Sweatpants</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱1752</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sp">
+<img alt="Smartphone" src="products/SP 3.png"/>
+<h3>Beige SW</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱760</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sp">
+<img alt="Watch" src="products/SP 4.png"/>
+<h3>Black Track_Sweatpants</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2589</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sp">
+<img alt="Jacket" src="products/SP 5.png"/>
+<h3>Sports Pants</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱1041</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="car">
+<img alt="Sunglasses" src="products/CHP 1.png"/>
+<h3>Carpo White Pants</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱717</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="car">
+<img alt="Smartphone" src="products/CHP 2.png"/>
+<h3>Brown Cargo Pants</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱1098</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="car">
+<img alt="Watch" src="products/CHP 3.png"/>
+<h3>Black Cargo</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1110</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="car">
+<img alt="Jacket" src="products/CHP 4.png"/>
+<h3>Brown Cargo</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱2717</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="car">
+<img alt="Sunglasses" src="products/CHP 5.png"/>
+<h3>Blue Toned Pants</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱919</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="LST">
+<img alt="Smartphone" src="products/LST 1.png"/>
+<h3>Street Worn Long Sleeves</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱1285</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="LST">
+<img alt="Watch" src="products/LST 2.png"/>
+<h3>Billionaire's Boy Club LSleeve</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2711</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bt">
+<img alt="Jacket" src="products/BT 1.png"/>
+<h3>BabyTee - Pink</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱685</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bt">
+<img alt="Sunglasses" src="products/BT 2.png"/>
+<h3>BabyTee - Pink</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱1636</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ja">
+<img alt="Smartphone" src="products/J 1.png"/>
+<h3>Smartphone</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱727</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ja">
+<img alt="Watch" src="products/J 2 .png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1360</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="tee">
+<img alt="Jacket" src="products/TEE 1.png"/>
+<h3>Jacket</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱1362</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="tee">
+<img alt="Sunglasses" src="products/tee 2.png"/>
+<h3>Sunglasses</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱2398</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sw">
+<img alt="Smartphone" src="products/SW 2.png"/>
+<h3>Smartphone</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱2122</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sw">
+<img alt="Watch" src="products/SW 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1915</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="b">
+<img alt="Jacket" src="products/B 1.png"/>
+<h3>Jacket</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱1945</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="b">
+<img alt="Sunglasses" src="products/B 2.png"/>
+<h3>Sunglasses</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱2370</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bd">
+<img alt="Smartphone" src="products/BD 1.png"/>
+<h3>Smartphone</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱2007</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bd">
+<img alt="Watch" src="products/BD 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱911</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bn">
+<img alt="Jacket" src="products/BD 3.png"/>
+<h3>Jacket</h3>
+<p>Stylish winter jacket with insulation.</p>
+<p class="price">₱1203</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bn">
+<img alt="Sunglasses" src="products/BN 1.png"/>
+<h3>Sunglasses</h3>
+<p>UV-protected classic style sunglasses.</p>
+<p class="price">₱2395</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bn">
+<img alt="Smartphone" src="products/BN 2.png"/>
+<h3>Smartphone</h3>
+<p>Latest model with amazing camera quality.</p>
+<p class="price">₱705</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bp">
+<img alt="Watch" src="products/BP 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1800</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bp">
+<img alt="Watch" src="products/BP 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2131</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="cap">
+<img alt="Watch" src="products/C 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1513</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="cap">
+<img alt="Watch" src="products/C 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2001</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="cap">
+<img alt="Watch" src="products/C 3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2634</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="bp">
+<img alt="Watch" src="products/BP 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱676</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="dj">
+<img alt="Watch" src="products/DJ 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2170</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="dj">
+<img alt="Watch" src="products/DJ 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱914</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="dj">
+<img alt="Watch" src="products/DJ 3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1248</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="fm">
+<img alt="Watch" src="products/FM1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2948</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="fm">
+<img alt="Watch" src="products/FM2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1850</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="h">
+<img alt="Watch" src="products/h 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1823</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="h">
+<img alt="Watch" src="products/h 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2786</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="lsh">
+<img alt="Watch" src="products/LSH 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2492</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="lsh">
+<img alt="Watch" src="products/LSH 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1952</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="lsh">
+<img alt="Watch" src="products/LSH 3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1160</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sd">
+<img alt="Watch" src="products/SD1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱636</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sd">
+<img alt="Watch" src="products/SD2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2868</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div><div class="product-card" data-category="sd">
+<img alt="Watch" src="products/SD3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2393</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sg">
+<img alt="Watch" src="products/SG 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱635</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sg">
+<img alt="Watch" src="products/SG 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2466</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sg">
+<img alt="Watch" src="products/SG 3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1708</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div><div class="product-card" data-category="sk">
+<img alt="Watch" src="products/SK 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱659</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sk">
+<img alt="Watch" src="products/SK 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱698</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sk">
+<img alt="Watch" src="products/SK 3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1273</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sl">
+<img alt="Watch" src="products/SL1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱601</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div><div class="product-card" data-category="sl">
+<img alt="Watch" src="products/SL2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱954</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sl">
+<img alt="Watch" src="products/SL3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2646</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sn">
+<img alt="Watch" src="products/SN1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2748</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sn">
+<img alt="Watch" src="products/SN2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1140</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div><div class="product-card" data-category="sn">
+<img alt="Watch" src="products/SN3.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱788</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sk">
+<img alt="Watch" src="products/SK 5.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1898</p>
+<p class="stars">★★★☆☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="sk">
+<img alt="Watch" src="products/SK 4.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱2996</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ss">
+<img alt="Watch" src="products/SS 1.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱644</p>
+<p class="stars">★★★★☆</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+<div class="product-card" data-category="ss">
+<img alt="Watch" src="products/SS 2.png"/>
+<h3>Watch</h3>
+<p>Elegant wristwatch with leather strap.</p>
+<p class="price">₱1751</p>
+<p class="stars">★★★★★</p>
+<button class="btn btn-info mt-2">View Details</button></div>
+</div>
+</div>
+</div>
+</div>
+</center>
+</main>
+<footer class="page-footer">
+<div class="container">
+<center><div class="input-container">
+<i class="fa fa-envelope-o"></i>
+<input id="emailus" name="fname" placeholder="email@website.com" type="text"/>
+<i class="fa fa-chevron-right"></i>
+</div></center>
+<center><p id="tptitle"> Klynt</p> </center>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<br/>
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-12">
+<h4 class="text-uppercase font-weight-bold">Additional Information</h4><br/>
+<p>Founded by Mendoza Mikhail Pitstock in 2023, Klynt transcends mere clothing; it embodies a cultural experience. Streetwear, a fashion trend originated in streets, is known for its laid-back, comfortable, 
+                and distinctive aesthetic that gives consideration to the attitudes and lifestyle (Blogs Crew, 2023)</p>
+<p>People express themselves in different, unique ways which includes their clothing, hairstyle, body customization (e.g., tattoos), and jewelry , and adopting what is more commonly referred to as fashion (Ross, 2020), 
+                and the fashion embodies a contemporary perspective and a set of trends to embrace. Notably , a compelling observation is that, for a significant portion of participants, fashion is predominantly associated with younger generations (Shukurova, 2018).</p>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12" id="contact-details">
+<h4 class="text-uppercase font-weight-bold">Contact Us!</h4><br/>
+<div class="details">
+<div>
+<li><i class="fa-solid fa-map"></i>
+<p>#938 Aurora Boulevard. Cubao, Quezon City</p>
+</li>
+<li>
+<i class="fa-solid fa-envelope"></i>
+<i> <a href="mailto:info@klynewtimes.com">info@klynewtimes.com</a></i>
+</li>
+<li>
+<i class="fa-brands fa-instagram"></i>
+<a href="https://www.instagram.com/klynewtimes" rel="noopener noreferrer" target="_blank">@klynewtimes</a>
+</li>
+<li>
+<i class="fa-solid fa-phone"></i>
+<p>09602010983 / 09785678293</p>
+</li>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-copyright text-center">© 2024 The Project Co. All rights reserved.</div>
+</div>
+</footer>
+</div>
+
+<div aria-hidden="true" aria-labelledby="productModalLabel" class="modal fade" id="productModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="productModalLabel"></h5>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body text-center">
+<img alt="" class="img-fluid mb-3" id="productModalImage" src="" style="max-height: 300px;"/>
+<p id="productModalDesc"></p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" type="button">Buy</button>
+<button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('.product-card button').on('click', function() {
+    const card = $(this).closest('.product-card');
+    const title = card.find('h3').text();
+    const desc = card.find('p').text();
+    const imgSrc = card.find('img').attr('src');
+    $('#productModalLabel').text(title);
+    $('#productModalDesc').text(desc);
+    $('#productModalImage').attr('src', imgSrc).attr('alt', title);
+    $('#productModal').modal('show');
+  });
+});
+</script></body>
+</html>

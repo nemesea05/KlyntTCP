@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+body {
+  background-image: url('backgroundimg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family: 'Roboto', sans-serif; 
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+}
+
+.navbar-brand {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+#search {
+  height: 35px; 
+  color: black;
+  vertical-align: middle; 
+  margin-top: 9px;
+  padding: 5px; 
+}
+
+.nav-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sections {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-a {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.navbar-brand-a:hover, .navbar-brand-a:active {
+  cursor: pointer;
+  font-size: 160%;
+  color: #702f04;
+  transition: .5s;
+  transform: translate(0px, -10px);
+}
+
+#logotitle {
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+  color: #000000;
+  font-size: 20px;
+}
+
+.nav-link:hover, .nav-link:active {
+  cursor: pointer;
+  font-size: 130%;
+  text-decoration: wavy;
+  color: #702f04;
+}
+
+a.active, a:hover {
+  background: rgba(0, 102, 255, 0.3);
+  transition: .5s;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.tpid {
+  margin-left: 2%;
+  font-size: 30px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+.login-container {
+  padding: 10px;
+}
+
+.inner-row {
+  height: 100vh;
+}
+
+.primaryBg {
+  background: rgba(141, 194, 111, 1);
+}
+
+.primaryColor {
+  color: rgba(141, 194, 111, 1);
+}
+
+.primaryColor:hover {
+    color: #0c0869;
+}
+
+.img-fluid {
+    height: 500px;
+    width: 510px; 
+    border-radius: 3px; 
+    margin-bottom: 0; 
+    margin-left: 10%;
+}
+
+.registration-form {
+    display: none;
+}
+
+.form-box {
+  background-color: rgba(255, 255, 255, 0.9); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  border-radius: 12px;
+  margin-top: 0; 
+  padding: 20px; 
+}
+
+.form-title h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.form-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: rgb(6, 4, 71); 
+  margin: 10px auto 0 auto;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(141, 194, 111, 1);
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #0c0869; 
+  transform: translateY(-2px);
+}
+
+.btn.signup-show, .btn.login-show {
+  color: rgb(49, 97, 20);
+  font-size: 14px;
+}
+
+.btn.signup-show:hover, .btn.login-show:hover {
+  color: #0c0869;
+}
+
+.socials {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.socials .btn {
+  background-color: transparent;
+  color: rgb(23, 6, 66);
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.follow-us-content {
+  display: none;
+}
+
+.socials .btn:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.follow-us-content ul li {
+  list-style-type: none;
+  font-size: 16px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.follow-us-content ul li i {
+  margin-right: 10px;
+  color: #333;
+}
+
+.follow-us-content ul li i:hover {
+  color: rgba(141, 194, 111, 1);
+}
+
+.page-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 60px 0 30px;
+}
+
+.footer-copyright {
+  color: #666;
+  padding: 40px 0;
+}
+
+#contact-details .details li {
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+#contact-details .details li i {
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .details li p {
+  font-size: 18px;
+  margin: 0;    
+}
+
+@media (max-width: 768px) {
+
+  .inner-row {
+    height: auto; 
+    padding: 20px;
+  }
+
+  .img-fluid {
+    margin-left: 22%;
+    height: 220px;
+    width: 230px;
+
+  }
+}
+
+@media (max-width: 576px) {
+  .form-box {
+    margin-top: 15px;
+    width: 100%; 
+    padding: 15px; 
+  }
+}

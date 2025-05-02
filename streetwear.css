@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-image: url('bg1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  
+  #container {
+    text-align: center;
+   align-items:center;
+   margin-top: 1%;
+    margin-top: 5%;
+    background-color:  rgba(255, 255, 255, 0.7);
+   border-radius: 0%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 100%;
+    height: 100%;
+    
+  }
+ 
+
+    #cards {
+      display:flex;
+      justify-content: center;
+      padding-bottom: 5%;
+      width: 100%;
+      gap: 5px;
+    }
+  
+    .gallery-item img {
+      border-radius: 0 !important;
+      
+  
+    }
+    
+    .gallery-item {
+      border-radius: 0 !important;
+
+    }
+  
+  .expand {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .edit-cover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .job-title {
+    font-size: 16px;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    color: #343434;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid  #343434;
+    
+  }
+  
+  .info-section {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  
+  .info-card {
+    background-color: #f5f7fa;
+    padding: 15px;
+    width: 30%;
+    border-radius: 8px;
+  }
+  
+  .info-card h3 {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: Center;
+  }
+  
+  .info-card p i {
+      margin-right: 10px; 
+      color: #343434;     
+      font-size: 16px;  
+  }
+  
+  
+  h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #343434; 
+    margin: 10px auto;
+    border-radius: 2px;
+  }
+  
+  
+  .info-card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .info-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .info-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .Display-color {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;       
+    height: 300px;             
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    margin: 20px 0;    
+            
+}
+
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    height: 100px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;
+    position: relative;
+  }
+  
+  .navbar-brand {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  #search {
+    height: 35px; 
+    color: black;
+    vertical-align: middle; 
+    margin-top: 9px;
+    padding: 5px; 
+   
+  }
+  
+  .nav-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand-a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 2px;
+  }
+  
+  .navbar-brand-a:hover, .navbar-brand-a:active {
+    cursor: pointer;
+    font-size: 160%;
+    color: #702f04;
+    transition: .5s;
+    transform: translate(0px, -10px);
+  }
+  
+  #logotitle{
+    font-size: 30px;
+    font-family: "Courgette", cursive;
+  }
+  .nav-link {
+    margin-right: 1em !important;
+    color: #000000;
+    font-size: 20px;
+  }
+  
+  .nav-link:hover, .nav-link:active {
+    cursor: pointer;
+    font-size: 130%;
+    text-decoration: underline;
+    color: #702f04;
+  }
+  
+  #logoid:hover{
+    background: rgba(22,22,22,0.5);
+    color: #702f04;
+    transition: .5s;
+    transform: translate(0px, -10px);
+  }
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
+     .tpid{
+    margin-left: 2%;
+    font-size: 30px;
+   font-family: "Yanone Kaffeesatz", sans-serif;
+  
+     }
+  
+    #search{
+      height: 35%;
+      color: black;
+    }
+    
+    #searchlogo {
+      height: 15px;
+      width: 15px;
+      float: right;
+      margin-top: -82px;
+      margin-right: -20px;
+    
+    }
+  
+  a.active, a:hover{
+      background: rgb(0, 102, 255, 0.3);
+      transition: .5s;
+  }
+  
+  .circle-nav {
+      width: 40px; 
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-block;
+      margin-left: 15px; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+  }
+  
+  .profile-image-nav {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+
+
+  #streetwear {
+    margin-right: 150px;
+    margin-left: 90px;
+    border-radius: 50px;
+  }
+  #footwear {
+    border-radius: 50px;
+  }
+
+@media only screen and (max-width: 1000px) {
+  #cards {
+    display: flex;
+    flex-direction: column;
+  }
+  #streetwear {
+    margin-left: 17%;
+    
+  }
+  #footwear {
+    margin-top: 60px;
+    margin-left: 17%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #container {
+    width: 90%;
+  }
+  #streetwear {
+    margin-left: 16%;
+    
+  }
+  #footwear {
+    margin-left: 16%;
+  }
+}
+
+.orbitron-one{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style:normal;
+}
+
+#logotitle{
+    font-size: 30px;
+    font-family: "courgette";
+   font-weight: bold;
+  }
+  #collectiontitle{
+    font-size: 30px;
+   font-family: "courgette";
+   font-weight: bold;
+  }
+.page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+   

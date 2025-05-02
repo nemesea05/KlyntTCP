@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+body {
+ 
+  background-color: white;
+  background-size: 100% 100%;
+  
+}
+  
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  height: 100px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  z-index: 1000;
+  position: relative;
+}
+
+.navbar-brand {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+#search {
+  height: 35px; 
+  color: black;
+  vertical-align: middle; 
+  margin-top: 9px;
+  padding: 5px; 
+ 
+}
+
+.nav-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.sections{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color:  rgba(255, 255, 255, 0.5);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+
+
+
+nav {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand-a {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.navbar-brand-a:hover, .navbar-brand-a:active {
+  cursor: pointer;
+  font-size: 160%;
+  color: #702f04;
+  transition: .5s;
+  transform: translate(0px, -10px);
+}
+
+
+#logotitle{
+  font-size: 30px;
+  font-family: "courgette";
+ font-weight: bold;
+}
+#collectiontitle{
+  font-size: 30px;
+ font-family: "courgette";
+ font-weight: bold;
+}
+
+
+#logotitle::hover{
+  cursor: pointer;
+  text-decoration:wavy;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-link {
+  margin-right: 1em !important;
+  color: #000000;
+  font-size: 20px;
+}
+
+.nav-link:hover, .nav-link:active {
+  cursor: pointer;
+  font-size: 130%;
+  text-decoration:wavy;
+  color: #702f04;
+}
+
+a.active, a:hover{
+	background: rgb(0, 102, 255, 0.3);
+	transition: .5s;
+}
+
+#logoid::hover{
+  background: rgba(22,22,22,0.5);
+  color: #702f04;
+  transition: .5s;
+  transform: translate(0px, -10px);
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+   .tpid{
+  margin-left: 2%;
+  font-size: 30px;
+ font-family: "Yanone Kaffeesatz", sans-serif;
+
+   }
+
+  #search{
+    height: 35%;
+    color: black;
+  }
+  
+  #searchlogo {
+    height: 15px;
+    width: 15px;
+    float: right;
+    margin-top: -82px;
+    margin-right: -20px;
+  
+  }
+
+ .page-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 60px 0 30px;
+}
+
+.footer-copyright {
+  color: #666;
+  padding: 40px 0;
+}
+
+#contact-details .details li{
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+#contact-details .details li i{
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .details li p{
+  font-size: 18px;
+  margin: 0;    
+}
+
+#more-about {
+  margin-left: 15px;
+  text-align: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 900;
+}
+
+#more-about h1{
+  font-size: 50px;
+  color: #000;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 900;
+}
+
+.p1{
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+}
+
+.container-about {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  margin-left: 10%;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+}
+
+#about-content {
+  flex: 1;
+}
+
+@media screen and (max-width: 768px){
+  .more-about {
+    padding: 0px 20px;
+  }  
+  .more-about h1 {
+    font-size: 36px;
+  }
+  .more-about .p1 {
+    font-size: 17px;
+    margin-bottom: 0px;
+  }
+  .container-about {
+    padding: 0px;
+  }
+  .about {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .about-image {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .about-content {
+    padding: 0px;
+    font-size: 16px;
+  }
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 0 1 calc(50% - 20px); 
+  box-sizing: border-box;
+  overflow: hidden; 
+  border-radius: 8px;
+  height: 250px; 
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; 
+  border-radius: 8px;
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.btn{
+  color: pink;
+}
+.overlay h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.overlay a:hover {
+  color: yellow;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .overlay h2 {
+    font-size: 18px;
+    
+  }
+}
+
+#tabs{
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+#hide-btn{
+  cursor: pointer;
+}
+#show-btn{
+  cursor: pointer;
+}
+
+.date{
+  padding-top: 10px;
+  text-align: center;
+  align-items: center;
+  height: 50px;
+  width: 20%;
+  background-color: beige;
+}
+
+.circle-nav {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 15px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
+
+.profile-image-nav {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.navbar .btn .fas.fa-search {
+  color: #333 !important; 
+}
+#h2color{
+text-align: center;
+font-family:"Courgette", cursive;
+}
+.rock-salt-regular {
+  font-family: "Rock Salt", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+#hide-btn{
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 1%;
+  
+  background-color:  rgba(255, 255, 255, 0.2);
+}
+#show-btn{
+  font-size: 15px;
+  padding: 1%;
+  border-radius: 8px;
+  background-color:  rgba(255, 255, 255, 0.2);
+}
+#hide-btn, #show-btn {
+  transition: transform 0.5s ease;
+}
+
+#hide-btn:hover,
+#show-btn:hover {
+  background: lightblue;
+  color: white;
+  transform: 2s;
+}
+.input-container {
+  position: relative;
+  width: 35%;
+  
+  margin-bottom: 4%;
+  border-bottom: 1px solid white; 
+}
+
+#emailus {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 100%;
+  padding-left: 30px; 
+  padding-right: 20px; 
+  outline: none;
+  font-size: 16px;
+  height: 30px;
+}
+
+.input-container .fa-envelope-o {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 18px;
+}
+
+.input-container .fa-chevron-right {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 18px;
+}
+#tptitle{
+  font-size: 40px;
+ font-family: "Courgette", cursive;
+}
+.labelfeat{
+  text-align: center;
+  font-size: 45px;
+  font-family:"Courgette", cursive;
+}
+.labelfeat p{
+  text-align: center;
+  font-size: 45px;
+  font-family:"Courgette", cursive;
+}
+.setimages{
+text-align: center;  
+margin-top: 5%;
+display: flex; 
+justify-content:center  
+}
+#modelimg{
+  width: 35%;
+  margin: 0 20px;
+}
+#desc{
+  font-size: 25px;
+  font-family: "Archivo Black", sans-serif;
+  margin-top: 2%;
+  margin-left: 21%;
+}
+#descp{
+  font-size: 17px;
+  text-align: justify;
+  margin-left: 21%;
+}
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px; 
+  width: 80%;
+  margin: 0 auto;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover; 
+}
+.map{
+text-align: center;
+}
+.contacts{
+  margin-top: 3%;
+  text-align: center; 
+}
+.contacts h5{
+  padding-bottom: 1%;
+   font-weight: bold; }
+   
+.orbitron-one{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style:normal;
+}
+
+#productbtn{
+  font-family: courgette;
+}
+
+
+#navitemfont{
+  font-family: courgette;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+  

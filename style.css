@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.overlay h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay .btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .overlay h2 {
+        font-size: 18px;
+    }
+
+    .overlay .btn {
+        font-size: 14px;
+    }
+}
+
+#hide-btn{
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 1%;
+  
+    background-color:  rgba(255, 255, 255, 0.2);
+  }
+  #show-btn{
+    font-size: 15px;
+    padding: 1%;
+    border-radius: 8px;
+    background-color:  rgba(255, 255, 255, 0.2);
+  }
+  #hide-btn, #show-btn {
+    transition: transform 0.5s ease;
+  }
+  
+  #hide-btn:hover,
+  
+  #show-btn:hover {
+    background: lightblue;
+    color: white;
+    transform: 2s;
+  }
+  
+  
+  .cart-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+  
+  }
+  
+  .cart-item img {
+    border-radius: 5px;
+    align-items: center;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+  
+  }
+  
+  .quantity-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-box button {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .quantity-box input {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .btn-block {
+    display: inline-block;
+    width: 100%;
+    outline: #000;
+  }
+  .product-image{
+    max-width: 80px;
+    margin-right: 15px
+  }
